@@ -1,9 +1,11 @@
 <p id="notice"><%= notice %></p>
-
+<img src="<%="/public/user_images/#{@user.image_name}.jpg"%>" alt="<%=@user.image_name%>">
 <p>
   <strong>Name:</strong>
   <%= @user.name %>
 </p>
+<p><%= @user.member %></p>
+<p><%= @user.profile %></p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to("編集", "/users/#{@user.id}/edit"), edit_user_path(@user) %> |
+<%= link_to ("一覧","/users/index", users_path) %>
