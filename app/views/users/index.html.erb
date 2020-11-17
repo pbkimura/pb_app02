@@ -13,22 +13,18 @@
   <tbody>
     <% @users.each do |user| %>
     <img name="image" value="" src="<%="/public/user_images/#{user.image_name}.jpg"%>" alt="<%= user.image_name %>">
-        <br>
-        <%= link_to(user.name, "/users/#{user.id}") %>
-        <br>
-        <%= user.member %>
-        <br>
-        <%= user.profile %>
       <tr>
-        <td><%= user.name %></td>
-        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to(user.name,"/users/#{user.id}" %></td>
+        <td><%= user.member %></td>
+        <td><%= user.profile %></td>
+        <!--<td><%= link_to 'Show', user %></td>-->
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+<!--user_imagesディレクトリは勝手に記述，image_nameカラムも定義してない-->
 <br>
 
 <%= link_to 'New User', new_user_path %>
